@@ -11,8 +11,6 @@
 #include <iostream>
 #include <cmath>
 
-#endif /* point_hpp */
-
 struct Point {
     float x;
     float y;
@@ -31,3 +29,5 @@ struct Point {
     
    friend std::ostream& operator<<(std::ostream& os, const Point &point);
 };
+
+#endif /* point_hpp */

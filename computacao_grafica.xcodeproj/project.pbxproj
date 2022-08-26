@@ -11,6 +11,7 @@
 		0D14252128B869D800315985 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D14252028B869D800315985 /* GLUT.framework */; };
 		0D14252328B869E100315985 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D14252228B869E100315985 /* OpenGL.framework */; };
 		0D14252828B8700900315985 /* point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D14252628B8700900315985 /* point.cpp */; };
+		0D14252B28B8764600315985 /* color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D14252928B8764600315985 /* color.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,6 +33,8 @@
 		0D14252228B869E100315985 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		0D14252628B8700900315985 /* point.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = point.cpp; sourceTree = "<group>"; };
 		0D14252728B8700900315985 /* point.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = point.h; sourceTree = "<group>"; };
+		0D14252928B8764600315985 /* color.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = color.cpp; sourceTree = "<group>"; };
+		0D14252A28B8764600315985 /* color.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = color.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +98,8 @@
 			children = (
 				0D14252628B8700900315985 /* point.cpp */,
 				0D14252728B8700900315985 /* point.h */,
+				0D14252928B8764600315985 /* color.cpp */,
+				0D14252A28B8764600315985 /* color.h */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -156,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D14252B28B8764600315985 /* color.cpp in Sources */,
 				0D14252828B8700900315985 /* point.cpp in Sources */,
 				0D14251928B8697000315985 /* main.cpp in Sources */,
 			);
