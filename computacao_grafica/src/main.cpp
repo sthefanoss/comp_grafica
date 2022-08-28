@@ -10,73 +10,12 @@
 
 #include "models/point.h"
 #include "models/color.h"
+#include "models/drawning_data.h"
+#include "models/text_drawning_data.h"
 #include "utils/functional.h"
 
 #define XD_MAX 800
 #define YD_MAX 600
-
-struct Point;
-struct DrawingData;
-struct TextDrawingData;
-
-struct DrawingData {
-  std::vector<std::vector<Point>> paths;
-  Color color;
-  int type;
-  int width;
-
-  DrawingData(){}
-  DrawingData(const std::vector<std::vector<Point>> &paths, const Color &color, int type, float width = 0) {
-    this->paths = paths;
-    this->color = color;
-    this->type = type;
-    this->width = width;
-  }
-
-  DrawingData transform(std::function<Point(const Point&)> callback) {
-    std::vector<std::vector<Point>> transformedPaths =
-      map<std::vector<Point>>(this->paths, [&](std::vector<Point> path) {
-       return map<Point>(path, callback);
-          
-      }
-    );
-
-    return DrawingData(
-      transformedPaths,
-      this->color,
-      this->type,
-      this->width
-    );
-  }
-
-  DrawingData translate(Point offset) {
-    return this->transform([&](Point point){
-        return point + offset;
-      }
-    );
-  }
-
-  DrawingData rotate(float angle) {
-    return this->transform([&](Point point){
-        return point.rotate(angle);
-      }
-    );
-  }
-};
-
-struct TextDrawingData{
-  std::string text;
-  Color color;
-  Point position;
-  void* font;
-
-  TextDrawingData(const std::string &text, const Color &color, const Point &position, void *font) {
-    this->text = text;
-    this->color = color;
-    this->position = position;
-    this->font = font;
-  }
-};
 
 std::vector<DrawingData> g_staticDrawings;
 std::vector<TextDrawingData> g_texts;
