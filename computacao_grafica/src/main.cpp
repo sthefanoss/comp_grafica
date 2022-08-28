@@ -21,6 +21,13 @@
 #define IMAGE_OFFSET 100
 #define IMAGE_SCALE 10
 
+#define YELLOW Color(1,1,0)
+#define RED Color(1,0,0)
+#define GREEN Color(0,1,0)
+#define CIRCLE_CENTER Point(30,40)
+#define SMALLER_CIRCLE_RADIUS 5.0f
+#define LARGER_CIRCLE_RADIUS 10.f
+
 std::vector<Point> outterPolygonal = {
     Point(0,0),
     Point(10,0),
@@ -44,58 +51,67 @@ std::vector<Point> rectanglePolygonal = {
     Point(20,55),
 };
 
+std::vector<Point> smallerCirclePolygonal = getCirclePolygon(
+    CIRCLE_CENTER,
+    SMALLER_CIRCLE_RADIUS
+);
+
+std::vector<Point> largerCirclePolygonal = getCirclePolygon(
+    CIRCLE_CENTER,
+    LARGER_CIRCLE_RADIUS
+);
+
+void rasterTriangle(const Triangle& triangle) {
+    glVertex2f(IMAGE_OFFSET + triangle.a.x * IMAGE_SCALE, IMAGE_OFFSET + triangle.a.y * IMAGE_SCALE);
+    glVertex2f(IMAGE_OFFSET + triangle.b.x * IMAGE_SCALE, IMAGE_OFFSET + triangle.b.y * IMAGE_SCALE);
+    glVertex2f(IMAGE_OFFSET + triangle.c.x * IMAGE_SCALE, IMAGE_OFFSET + triangle.c.y * IMAGE_SCALE);
+}
+
 void drawFilledPolygonal(const std::vector<Point>& polygon,const Color& color) {
     std::vector<Triangle> triangles = Triangulate::Process(polygon);
     
     glBegin(GL_TRIANGLES);
     glColor3f(color.red, color.green, color.blue);
     for (Triangle triangle : triangles) {
-      glVertex2f(IMAGE_OFFSET + triangle.a.x * IMAGE_SCALE, IMAGE_OFFSET + triangle.a.y * IMAGE_SCALE);
-      glVertex2f(IMAGE_OFFSET + triangle.b.x * IMAGE_SCALE, IMAGE_OFFSET + triangle.b.y * IMAGE_SCALE);
-      glVertex2f(IMAGE_OFFSET + triangle.c.x * IMAGE_SCALE, IMAGE_OFFSET + triangle.c.y * IMAGE_SCALE);
+        rasterTriangle(triangle);
     }
     glEnd();
 }
 
 void drawWindow() {
-    Point circlesCenter = Point(30,40);
-    std::vector<Point> greaterCirclePolygonal = getCirclePolygon(circlesCenter, 10.0f);
-    std::vector<Point> smallerCirclePolygonal = getCirclePolygon(circlesCenter, 5.0f);
-  
+    glClear(GL_COLOR_BUFFER_BIT);
     
+    drawFilledPolygonal(outterPolygonal, YELLOW);
+    drawFilledPolygonal(rectanglePolygonal, GREEN);
+    drawFilledPolygonal(largerCirclePolygonal, RED);
+    drawFilledPolygonal(smallerCirclePolygonal, GREEN);
     
-  glClear(GL_COLOR_BUFFER_BIT);
-    drawFilledPolygonal(outterPolygonal, Color(1,1,0));
-    drawFilledPolygonal(rectanglePolygonal, Color(0,1,0));
-    drawFilledPolygonal(greaterCirclePolygonal, Color(1,0,0));
-    drawFilledPolygonal(smallerCirclePolygonal, Color(0,1,0));
-        
-  glutSwapBuffers();
+    glutSwapBuffers();
 }
 
 void onChangeWindowSize(GLsizei width, GLsizei height) {
-  if (height == 0)
-    height = 1;
+    if (height == 0)
+        height = 1;
 
-  glViewport(0, 0, width, height);
-  glMatrixMode(GL_PROJECTION);
-  glLoadIdentity();
+    glViewport(0, 0, width, height);
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
 
-  if (width <= height)
-    gluOrtho2D(0, XD_MAX, 0, YD_MAX * height / width);
-  else
-    gluOrtho2D(0, XD_MAX * width / height, 0, YD_MAX);
+    if (width <= height)
+        gluOrtho2D(0, XD_MAX, 0, YD_MAX * height / width);
+    else
+        gluOrtho2D(0, XD_MAX * width / height, 0, YD_MAX);
 }
 
 int main(int argc, char **argv) {
-  glutInit(&argc, argv);
-  glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
-  glutInitWindowSize(XD_MAX, YD_MAX);
-  glutInitWindowPosition(100, 100);
-  glutCreateWindow("OpenGL - Anima Aviao-STHEFANO SCHIAVON");
-  glutDisplayFunc(drawWindow);
-  glutReshapeFunc(onChangeWindowSize);
-  setbuf(stdin,NULL);
-  glutMainLoop();
-  return 0;
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+    glutInitWindowSize(XD_MAX, YD_MAX);
+    glutInitWindowPosition(100, 100);
+    glutCreateWindow("OpenGL - Figura STHEFANO SCHIAVON");
+    glutDisplayFunc(drawWindow);
+    glutReshapeFunc(onChangeWindowSize);
+    setbuf(stdin,NULL);
+    glutMainLoop();
+    return 0;
 }
