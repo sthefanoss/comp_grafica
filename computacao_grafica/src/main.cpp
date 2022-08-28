@@ -3,16 +3,10 @@
 #include <GLUT/glut.h>
 #include <vector>
 #include <iostream>
-#include <cstdlib>
-#include <cmath>
-#include <string>
-#include <functional>
 
 #include "models/point.h"
 #include "models/color.h"
-#include "models/drawning_data.h"
-#include "models/text_drawning_data.h"
-#include "utils/functional.h"
+#include "models/triangle.h"
 #include "utils/triangulate.h"
 #include "utils/math.h"
 
@@ -20,10 +14,10 @@
 #define YD_MAX 800
 #define IMAGE_OFFSET 100
 #define IMAGE_SCALE 10
-
-#define YELLOW Color(1,1,0)
-#define RED Color(1,0,0)
-#define GREEN Color(0,1,0)
+#define WHITE Color(0xFDFDFD)
+#define YELLOW Color(0xF0FE00)
+#define RED Color(0xF60400)
+#define GREEN Color(0X00FC06)
 #define CIRCLE_CENTER Point(30,40)
 #define SMALLER_CIRCLE_RADIUS 5.0f
 #define LARGER_CIRCLE_RADIUS 10.f
@@ -68,25 +62,25 @@ void rasterTriangle(const Triangle& triangle) {
 }
 
 void drawFilledPolygonal(const std::vector<Point>& polygon,const Color& color) {
-    std::vector<Triangle> triangles = Triangulate::Process(polygon);
+    auto triangles = Triangulate::Process(polygon);
     
     glBegin(GL_TRIANGLES);
     glColor3f(color.red, color.green, color.blue);
-    for (Triangle triangle : triangles) {
+    for (auto triangle : triangles) {
         rasterTriangle(triangle);
     }
     glEnd();
     
     glBegin(GL_LINE_LOOP);
     glColor3f(0,0,0);
-    for (Point point : polygon) {
+    for (auto point : polygon) {
         glVertex2f(IMAGE_OFFSET + point.x * IMAGE_SCALE, IMAGE_OFFSET + point.y * IMAGE_SCALE);
     }
     glEnd();
 }
 
 void drawWindow() {
-    glClearColor(1,1,1,1);
+    glClearColor(WHITE.red,WHITE.green,WHITE.blue,1);
     glClear(GL_COLOR_BUFFER_BIT);
     
     drawFilledPolygonal(outterPolygonal, YELLOW);
