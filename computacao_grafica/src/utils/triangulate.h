@@ -15,9 +15,8 @@
 class Triangulate {
 public:
 
-  // triangulate a contour/polygon, places results in STL vector
-  // as series of triangles.
-  static bool Process(const std::vector<Point> &contour, std::vector<Triangle> &result);
+  // triangulate a contour/polygon
+  static std::vector<Triangle> Process(const std::vector<Point> &contour);
 
   // compute area of a contour/polygon
   static float Area(const std::vector<Point> &contour);

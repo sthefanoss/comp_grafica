@@ -73,12 +73,13 @@ bool Triangulate::Snip(const std::vector<Point> &contour,int u,int v,int w,int n
   return true;
 }
 
-bool Triangulate::Process(const std::vector<Point> &contour, std::vector<Triangle> &result)
+std::vector<Triangle> Triangulate::Process(const std::vector<Point> &contour)
 {
+  std::vector<Triangle> result = {};
+    
   /* allocate and initialize list of Vertices in polygon */
-
   int n = contour.size();
-  if ( n < 3 ) return false;
+  if ( n < 3 ) return result;
 
   int *V = new int[n];
 
@@ -101,7 +102,7 @@ bool Triangulate::Process(const std::vector<Point> &contour, std::vector<Triangl
     {
       //** Triangulate: ERROR - probable bad polygon!
       delete[] V;
-      return false;
+      return result;
     }
 
     /* three consecutive vertices in current polygon, <u,v,w> */
@@ -132,5 +133,5 @@ bool Triangulate::Process(const std::vector<Point> &contour, std::vector<Triangl
 
   delete[] V;
 
-  return true;
+  return result;
 }

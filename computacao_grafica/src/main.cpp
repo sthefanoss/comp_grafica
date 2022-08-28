@@ -45,8 +45,7 @@ std::vector<Point> rectanglePolygonal = {
 };
 
 void drawFilledPolygonal(const std::vector<Point>& polygon,const Color& color) {
-    std::vector<Triangle> triangles = {};
-    Triangulate().Process(polygon, triangles);
+    std::vector<Triangle> triangles = Triangulate::Process(polygon);
     
     glBegin(GL_TRIANGLES);
     glColor3f(color.red, color.green, color.blue);
