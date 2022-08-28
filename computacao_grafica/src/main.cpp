@@ -76,9 +76,17 @@ void drawFilledPolygonal(const std::vector<Point>& polygon,const Color& color) {
         rasterTriangle(triangle);
     }
     glEnd();
+    
+    glBegin(GL_LINE_LOOP);
+    glColor3f(0,0,0);
+    for (Point point : polygon) {
+        glVertex2f(IMAGE_OFFSET + point.x * IMAGE_SCALE, IMAGE_OFFSET + point.y * IMAGE_SCALE);
+    }
+    glEnd();
 }
 
 void drawWindow() {
+    glClearColor(1,1,1,1);
     glClear(GL_COLOR_BUFFER_BIT);
     
     drawFilledPolygonal(outterPolygonal, YELLOW);
