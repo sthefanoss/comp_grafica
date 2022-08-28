@@ -10,6 +10,7 @@
 
 #include "models/point.h"
 #include "models/color.h"
+#include "utils/functional.h"
 
 #define XD_MAX 800
 #define YD_MAX 600
@@ -17,14 +18,6 @@
 struct Point;
 struct DrawingData;
 struct TextDrawingData;
-
-template<class T>
-std::vector<T> map(const std::vector<T>& collection, std::function<T(const T&)> callback) {
-  std::vector<T> newCollection = {};
-  for(T element : collection)
-    newCollection.push_back(callback(element));
-  return newCollection;
-}
 
 struct DrawingData {
   std::vector<std::vector<Point>> paths;
@@ -43,7 +36,9 @@ struct DrawingData {
   DrawingData transform(std::function<Point(const Point&)> callback) {
     std::vector<std::vector<Point>> transformedPaths =
       map<std::vector<Point>>(this->paths, [&](std::vector<Point> path) {
-        return map<Point>(path, callback);}
+       return map<Point>(path, callback);
+          
+      }
     );
 
     return DrawingData(

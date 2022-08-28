@@ -35,6 +35,7 @@
 		0D14252728B8700900315985 /* point.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = point.h; sourceTree = "<group>"; };
 		0D14252928B8764600315985 /* color.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = color.cpp; sourceTree = "<group>"; };
 		0D14252A28B8764600315985 /* color.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = color.h; sourceTree = "<group>"; };
+		0DCBBF3F28BAE19C005D3724 /* functional.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = functional.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +88,7 @@
 		0D14252428B86FB000315985 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				0DCBBF3D28BAE189005D3724 /* utils */,
 				0D14252528B86FF300315985 /* models */,
 				0D14251828B8697000315985 /* main.cpp */,
 			);
@@ -102,6 +104,14 @@
 				0D14252A28B8764600315985 /* color.h */,
 			);
 			path = models;
+			sourceTree = "<group>";
+		};
+		0DCBBF3D28BAE189005D3724 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				0DCBBF3F28BAE19C005D3724 /* functional.h */,
+			);
+			path = utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
