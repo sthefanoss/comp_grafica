@@ -73,7 +73,7 @@ bool Triangulate::Snip(const std::vector<Point> &contour,int u,int v,int w,int n
   return true;
 }
 
-bool Triangulate::Process(const std::vector<Point> &contour, std::vector<Point> &result)
+bool Triangulate::Process(const std::vector<Point> &contour, std::vector<Triangle> &result)
 {
   /* allocate and initialize list of Vertices in polygon */
 
@@ -117,10 +117,7 @@ bool Triangulate::Process(const std::vector<Point> &contour, std::vector<Point> 
       a = V[u]; b = V[v]; c = V[w];
 
       /* output Triangle */
-      result.push_back( contour[a] );
-      result.push_back( contour[b] );
-      result.push_back( contour[c] );
-
+      result.push_back(Triangle(contour[a], contour[b], contour[c]));
       m++;
 
       /* remove v from remaining polygon */

@@ -10,13 +10,14 @@
 
 #include <vector>
 #include "../models/point.h"
+#include "../models/triangle.h"
 
 class Triangulate {
 public:
 
   // triangulate a contour/polygon, places results in STL vector
   // as series of triangles.
-  static bool Process(const std::vector<Point> &contour, std::vector<Point> &result);
+  static bool Process(const std::vector<Point> &contour, std::vector<Triangle> &result);
 
   // compute area of a contour/polygon
   static float Area(const std::vector<Point> &contour);

@@ -45,13 +45,15 @@ std::vector<Point> rectanglePolygonal = {
 };
 
 void drawFilledPolygonal(const std::vector<Point>& polygon,const Color& color) {
-    std::vector<Point> trianglePoints = {};
-    Triangulate().Process(polygon, trianglePoints);
+    std::vector<Triangle> triangles = {};
+    Triangulate().Process(polygon, triangles);
     
     glBegin(GL_TRIANGLES);
     glColor3f(color.red, color.green, color.blue);
-    for (Point point : trianglePoints) {
-      glVertex2f(IMAGE_OFFSET + point.x * IMAGE_SCALE, IMAGE_OFFSET + point.y * IMAGE_SCALE);
+    for (Triangle triangle : triangles) {
+      glVertex2f(IMAGE_OFFSET + triangle.a.x * IMAGE_SCALE, IMAGE_OFFSET + triangle.a.y * IMAGE_SCALE);
+      glVertex2f(IMAGE_OFFSET + triangle.b.x * IMAGE_SCALE, IMAGE_OFFSET + triangle.b.y * IMAGE_SCALE);
+      glVertex2f(IMAGE_OFFSET + triangle.c.x * IMAGE_SCALE, IMAGE_OFFSET + triangle.c.y * IMAGE_SCALE);
     }
     glEnd();
 }

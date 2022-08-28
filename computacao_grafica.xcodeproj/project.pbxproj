@@ -15,6 +15,8 @@
 		0DCBBF4428BAEC46005D3724 /* drawning_data.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DCBBF4228BAEC46005D3724 /* drawning_data.cpp */; };
 		0DCBBF4728BAEE18005D3724 /* text_drawning_data.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DCBBF4528BAEE18005D3724 /* text_drawning_data.cpp */; };
 		0DCBBF4A28BAEFFC005D3724 /* math.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DCBBF4828BAEFFC005D3724 /* math.cpp */; };
+		0DCBBF4D28BAFEB3005D3724 /* triangulate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DCBBF4B28BAFEB3005D3724 /* triangulate.cpp */; };
+		0DCBBF5028BAFEC7005D3724 /* triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DCBBF4E28BAFEC7005D3724 /* triangle.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +47,10 @@
 		0DCBBF4628BAEE18005D3724 /* text_drawning_data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = text_drawning_data.h; sourceTree = "<group>"; };
 		0DCBBF4828BAEFFC005D3724 /* math.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = math.cpp; sourceTree = "<group>"; };
 		0DCBBF4928BAEFFC005D3724 /* math.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = math.h; sourceTree = "<group>"; };
+		0DCBBF4B28BAFEB3005D3724 /* triangulate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = triangulate.cpp; sourceTree = "<group>"; };
+		0DCBBF4C28BAFEB3005D3724 /* triangulate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = triangulate.h; sourceTree = "<group>"; };
+		0DCBBF4E28BAFEC7005D3724 /* triangle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = triangle.cpp; sourceTree = "<group>"; };
+		0DCBBF4F28BAFEC7005D3724 /* triangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = triangle.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,8 @@
 				0DCBBF4328BAEC46005D3724 /* drawning_data.h */,
 				0DCBBF4528BAEE18005D3724 /* text_drawning_data.cpp */,
 				0DCBBF4628BAEE18005D3724 /* text_drawning_data.h */,
+				0DCBBF4E28BAFEC7005D3724 /* triangle.cpp */,
+				0DCBBF4F28BAFEC7005D3724 /* triangle.h */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -125,6 +133,8 @@
 				0DCBBF3F28BAE19C005D3724 /* functional.h */,
 				0DCBBF4828BAEFFC005D3724 /* math.cpp */,
 				0DCBBF4928BAEFFC005D3724 /* math.h */,
+				0DCBBF4B28BAFEB3005D3724 /* triangulate.cpp */,
+				0DCBBF4C28BAFEB3005D3724 /* triangulate.h */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -187,7 +197,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D14252B28B8764600315985 /* color.cpp in Sources */,
+				0DCBBF4D28BAFEB3005D3724 /* triangulate.cpp in Sources */,
 				0DCBBF4728BAEE18005D3724 /* text_drawning_data.cpp in Sources */,
+				0DCBBF5028BAFEC7005D3724 /* triangle.cpp in Sources */,
 				0DCBBF4428BAEC46005D3724 /* drawning_data.cpp in Sources */,
 				0D14252828B8700900315985 /* point.cpp in Sources */,
 				0D14251928B8697000315985 /* main.cpp in Sources */,
