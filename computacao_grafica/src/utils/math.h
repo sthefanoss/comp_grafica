@@ -17,4 +17,6 @@ int getBinnomialCoefficients(int n, int k);
 
 std::vector<Point> getBezierCurve(int numberOfPoints, std::vector<Point> controlPolygonal);
 
+std::vector<Point> getCirclePolygon(const Point& center, float radius, unsigned segments = 100);
+
 #endif /* math_hpp */
