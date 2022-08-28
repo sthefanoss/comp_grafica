@@ -14,6 +14,7 @@
 		0D14252B28B8764600315985 /* color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D14252928B8764600315985 /* color.cpp */; };
 		0DCBBF4428BAEC46005D3724 /* drawning_data.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DCBBF4228BAEC46005D3724 /* drawning_data.cpp */; };
 		0DCBBF4728BAEE18005D3724 /* text_drawning_data.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DCBBF4528BAEE18005D3724 /* text_drawning_data.cpp */; };
+		0DCBBF4A28BAEFFC005D3724 /* math.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DCBBF4828BAEFFC005D3724 /* math.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,6 +43,8 @@
 		0DCBBF4328BAEC46005D3724 /* drawning_data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = drawning_data.h; sourceTree = "<group>"; };
 		0DCBBF4528BAEE18005D3724 /* text_drawning_data.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = text_drawning_data.cpp; sourceTree = "<group>"; };
 		0DCBBF4628BAEE18005D3724 /* text_drawning_data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = text_drawning_data.h; sourceTree = "<group>"; };
+		0DCBBF4828BAEFFC005D3724 /* math.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = math.cpp; sourceTree = "<group>"; };
+		0DCBBF4928BAEFFC005D3724 /* math.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = math.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				0DCBBF3F28BAE19C005D3724 /* functional.h */,
+				0DCBBF4828BAEFFC005D3724 /* math.cpp */,
+				0DCBBF4928BAEFFC005D3724 /* math.h */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -186,6 +191,7 @@
 				0DCBBF4428BAEC46005D3724 /* drawning_data.cpp in Sources */,
 				0D14252828B8700900315985 /* point.cpp in Sources */,
 				0D14251928B8697000315985 /* main.cpp in Sources */,
+				0DCBBF4A28BAEFFC005D3724 /* math.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

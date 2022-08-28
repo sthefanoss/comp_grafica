@@ -14,6 +14,7 @@
 #include "models/text_drawning_data.h"
 #include "utils/functional.h"
 
+
 #define XD_MAX 800
 #define YD_MAX 600
 
@@ -24,32 +25,6 @@ Point g_planeOffset;
 float g_planeRotation;
 float g_planeVelocity;
 
-int getFactorial(int number) {
-  return number == 0 ? 1 : number * getFactorial(number - 1);
-}
-
-int getBinnomialCoefficients(int n, int k) {
-  int numerator =  getFactorial(n);
-  int denominator = getFactorial(k)*getFactorial(n-k);
-  return numerator/denominator;
-}
-
-std::vector<Point> getBezierCurve(int numberOfPoints, std::vector<Point> controlPolygonal) {
-  std::vector<Point> result = {};
-  float dt = 1.0/(numberOfPoints-1.0);
-  int n = controlPolygonal.size()-1;
-
-  for(float t = 0; t <= 1; t += dt) {
-    Point pointOfT = Point();
-
-    for(int i = 0; i <= n; i++)
-      pointOfT += controlPolygonal[i] * getBinnomialCoefficients(n, i) * pow(t, i)*pow(1-t,n-i);
-    
-    result.push_back(pointOfT);
-  }
-
-  return result;
-}
 
 void onSpecialInput(int key, int x, int y) {
   switch(key){
