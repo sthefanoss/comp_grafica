@@ -1,9 +1,15 @@
+#ifdef __MACH__
 #include <OpenGL/gl.h>
 #include <OpenGl/glu.h>
 #include <GLUT/glut.h>
+#elif __linux__
+#include <GL/gl.h>
+#include <GL/glu.h>
+#include <GL/glut.h>
+#endif
+
 #include <vector>
 #include <iostream>
-
 #include "models/point.h"
 #include "models/color.h"
 #include "models/triangle.h"

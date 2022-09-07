@@ -9,7 +9,6 @@
 #define drawning_data_hpp
 
 #include <vector>
-#include <functional>
 #include "point.h"
 #include "color.h"
 
@@ -22,12 +21,6 @@ struct DrawingData {
   DrawingData(){}
     
   DrawingData(const std::vector<std::vector<Point>> &paths, const Color &color, int type, float width = 0);
-
-  DrawingData transform(std::function<Point(const Point&)> callback);
-    
-  DrawingData translate(Point offset);
-
-  DrawingData rotate(float angle);
 };
 
 #endif /* drawning_data_hpp */
