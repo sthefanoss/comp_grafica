@@ -1,9 +1,12 @@
 # Atividade 1 de computação Gráfica
 
 ### **Professor** [Dr. Glaucius Décio Duarte](http://www2.pelotas.ifsul.edu.br/glaucius/cg/index.html)
-**Aluno** Sthefano Soares Schiavon
-**Disciplina** Computação Gráfica
-**Data** 07/09/2022
+
+**Aluno:** Sthefano Soares Schiavon
+
+**Disciplina:** Computação Gráfica
+
+**Data:** 07/09/2022
 ---
 ## 1. Objetivo do trabalho
 
