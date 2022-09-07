@@ -12,3 +12,9 @@ Triangle::Triangle(const Point& a, const Point& b, const Point& c) {
     this->b = b;
     this->c = c;
 }
+
+void Triangle::forEachPoint(std::function<void(Point)> callback) {
+    callback(a);
+    callback(b);
+    callback(c);
+}

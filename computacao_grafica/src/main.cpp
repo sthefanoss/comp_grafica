@@ -61,10 +61,8 @@ std::vector<Point> largerCirclePolygonal = getCirclePolygon(
     LARGER_CIRCLE_RADIUS
 );
 
-void rasterTriangle(const Triangle& triangle) {
-    glVertex2f(IMAGE_OFFSET + triangle.a.x * IMAGE_SCALE, IMAGE_OFFSET + triangle.a.y * IMAGE_SCALE);
-    glVertex2f(IMAGE_OFFSET + triangle.b.x * IMAGE_SCALE, IMAGE_OFFSET + triangle.b.y * IMAGE_SCALE);
-    glVertex2f(IMAGE_OFFSET + triangle.c.x * IMAGE_SCALE, IMAGE_OFFSET + triangle.c.y * IMAGE_SCALE);
+void glVertexPoint(const Point& point) {
+    glVertex2f(IMAGE_OFFSET + point.x * IMAGE_SCALE, IMAGE_OFFSET + point.y * IMAGE_SCALE);
 }
 
 void drawFilledPolygonal(const std::vector<Point>& polygon,const Color& color) {
@@ -73,14 +71,14 @@ void drawFilledPolygonal(const std::vector<Point>& polygon,const Color& color) {
     glBegin(GL_TRIANGLES);
     glColor3f(color.red, color.green, color.blue);
     for (auto triangle : triangles) {
-        rasterTriangle(triangle);
+        triangle.forEachPoint(glVertexPoint);
     }
     glEnd();
     
     glBegin(GL_LINE_LOOP);
     glColor3f(0,0,0);
     for (auto point : polygon) {
-        glVertex2f(IMAGE_OFFSET + point.x * IMAGE_SCALE, IMAGE_OFFSET + point.y * IMAGE_SCALE);
+        glVertexPoint(point);
     }
     glEnd();
 }

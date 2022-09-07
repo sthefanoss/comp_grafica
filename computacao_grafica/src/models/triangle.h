@@ -8,6 +8,7 @@
 #ifndef triangle_hpp
 #define triangle_hpp
 
+#include <functional>
 #include "point.h"
 
 struct Triangle {
@@ -16,6 +17,8 @@ struct Triangle {
     Point c;
     
     Triangle(const Point& a, const Point& b, const Point& c);
+
+    void forEachPoint(std::function<void(Point)> callback);
 };
 
 #endif /* triangle_hpp */
