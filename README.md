@@ -1,6 +1,6 @@
 # Atividade 1 de computação Gráfica
 
-### **Professor** [Dr. Glaucius Décio Duarte](http://www2.pelotas.ifsul.edu.br/glaucius/cg/index.html)
+### **Professor:** [Dr. Glaucius Décio Duarte](http://www2.pelotas.ifsul.edu.br/glaucius/cg/index.html)
 
 **Aluno:** Sthefano Soares Schiavon
 
