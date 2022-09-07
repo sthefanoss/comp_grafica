@@ -15,12 +15,12 @@ Renderizar a imagem abaixo com OpenGL, usando C++.
 O projeto foi desenvolvido no sistema MacOS, na IDE Xcode. Depois foi adaptado para executar também no Linux.
 
 ### 2.1 MacOS
-abrir xcode
-clonar um projeto selecionando "Clone an existing project"
-colar no campo de texto da url https://github.com/sthefanoss/comp_grafica.git 
-clicar clone
-clicar clone novamente
-clicar no botão para compilar e executar (como botão de play)
+1. abrir Xcode;
+2. clonar um projeto selecionando "Clone an existing project";
+3. colar no campo de texto da url https://github.com/sthefanoss/comp_grafica.git;
+4. clicar clone;
+5. clicar clone (dessa vez, para a janela que escolhe o nome da pasta onde será clonado);
+6. clicar no botão de play para compilar e executar;
 
 ### 2.2 Linux
 
