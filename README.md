@@ -10,11 +10,12 @@
 Renderizar a imagem abaixo com OpenGL, usando C++.
 ![figura do trabalho](figura.png)
 
-## 2. Requisitos para excecução do projeto
+## 2. Excecução do projeto
 
 O projeto foi desenvolvido no sistema MacOS, na IDE Xcode. Depois foi adaptado para executar também no Linux.
 
 ### 2.1 MacOS
+TO-DO
 
 ### 2.2 Linux
 
