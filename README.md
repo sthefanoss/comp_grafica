@@ -12,6 +12,7 @@
 ## 1. Objetivo do trabalho
 
 Renderizar a imagem abaixo com OpenGL, usando C++.
+
 ![figura do trabalho](figura.png)
 
 ## 2. Excecução do projeto
